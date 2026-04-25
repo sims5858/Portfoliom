@@ -1,12 +1,12 @@
 # Sezer Portfolio
 
-Sezer için hazırlanmış tek sayfalık kişisel CV ve portfolio web sitesi.
+Sezer için hazırlanmış tek sayfalık kişisel CV ve portfolyo web sitesi.
 
 ## İçerik
 
 - E-ticaret operasyon uzmanlığı
 - Entegrasyon yönetimi
-- Yapay zekalı SEO çalışmaları
+- SEO ve içerik çalışmaları
 - Referans projeler
 - Platform ve araç bilgileri
 - WhatsApp ve iletişim alanları

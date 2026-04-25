@@ -3,15 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sezer | E-Ticaret Operasyon Uzmanı</title>
+  <title>Sezer | E-Ticaret Operasyon ve Entegrasyon</title>
   <meta
     name="description"
-    content="Sezer için hazırlanmış e-ticaret operasyonu, entegrasyon, SEO, ürün içerikleri ve görsel yönetimi odaklı CV portfolio sitesi."
+    content="Sezer'in e-ticaret operasyonu, entegrasyon, SEO ve içerik yönetimi odaklı modern portfolyo sitesi."
   >
+  <script>
+    (function () {
+      try {
+        var storedTheme = localStorage.getItem("portfolio-theme");
+        var theme = storedTheme || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        document.documentElement.dataset.theme = theme;
+
+        var storedLanguage = localStorage.getItem("portfolio-language");
+        var language = storedLanguage || ((navigator.language || "").toLowerCase().startsWith("en") ? "en" : "tr");
+        document.documentElement.lang = language;
+      } catch (error) {}
+    })();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Manrope:wght@400;500;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Manrope:wght@400;500;600;700;800&display=swap"
     rel="stylesheet"
   >
   <link rel="stylesheet" href="styles.css">
@@ -20,47 +33,51 @@
   <div class="intro-screen" aria-hidden="true">
     <div class="intro-screen__core">
       <span class="intro-screen__brand">SEZER</span>
-      <p class="intro-screen__line">E-ticaret Operasyonu • Entegrasyon • SEO</p>
+      <p class="intro-screen__line">E-ticaret operasyonu, entegrasyon ve SEO</p>
     </div>
   </div>
+
   <div class="motion-layer" aria-hidden="true">
     <span class="orb orb-left"></span>
     <span class="orb orb-right"></span>
     <span class="ring ring-left"></span>
     <span class="ring ring-right"></span>
-    <span class="beam beam-left"></span>
-    <span class="beam beam-right"></span>
   </div>
+
   <div class="page-shell">
     <header class="hero">
       <nav class="topbar">
-        <span class="brand">SEZER</span>
+        <a class="brand" href="#top">SEZER</a>
         <div class="nav-links">
-          <a class="nav-link" href="#referanslar">Referanslar</a>
-          <a class="nav-link" href="#iletisim">İletişim</a>
+          <a class="nav-link" href="#about">Hakkımda</a>
+          <a class="nav-link" href="#work">İşler</a>
+          <a class="nav-link" href="#skills">Yetkinlikler</a>
+          <a class="nav-link" href="#process">Süreç</a>
+          <a class="nav-link" href="#contact">İletişim</a>
+        </div>
+        <div class="topbar-actions">
+          <button class="topbar-action" type="button" id="language-toggle" aria-label="Switch language">EN</button>
+          <button class="topbar-action" type="button" id="theme-toggle" aria-label="Toggle theme">Dark</button>
         </div>
       </nav>
 
-      <div class="hero-grid">
+      <div class="hero-grid" id="top">
         <div class="hero-copy">
-          <p class="eyebrow hero-reveal hero-reveal-delay-1">E-TICARET • ENTEGRASYON • SEO • GÖRSEL YÖNETİMİ</p>
-          <h1 class="hero-reveal hero-reveal-delay-2">
-            <span class="hero-title-top">E-ticarette uçtan uca operasyon</span>
-            <span class="hero-title-accent">ve entegrasyon yönetimi</span>
+          <p class="eyebrow reveal intro-delay-1">E-Ticaret • Entegrasyon • SEO • Görsel Operasyon</p>
+          <h1 class="reveal intro-delay-2">
+            E-ticarette düzen kurar,
+            <span>ürünü yayına hazır hale getiririm.</span>
           </h1>
-          <p class="lead hero-reveal hero-reveal-delay-3">
-            Merhaba, ben Sezer. Ürünlerin sisteme girişinden satışa açılmasına
-            kadar olan tüm e-ticaret operasyonunda aktif rol alıyorum. Nebim,
-            Entegra ve Ticimax entegrasyonlarını yönetiyor; ürün içerikleri,
-            görseller, kampanyalar ve satışa hazırlık süreçlerini birlikte
-            yürütüyorum. Yapay zekalı SEO çalışmaları yapıyor, görünürlük ve
-            satış tarafını güçlendiren içerikler hazırlıyorum. Ayrıca Wix, Codex, Cursor,
-            Claude ve Vercel ile web projeleri hazırlayıp deploy edebiliyorum.
+          <p class="lead reveal intro-delay-3">
+            Nebim, Entegra, Ticimax ve ProjeSoft akışlarını yönetiyor; ürün,
+            stok, içerik ve görsel tarafını birlikte ilerletiyorum. Kısa sürede
+            yayına alınabilen, satışa dönük ve sürdürülebilir e-ticaret yapıları
+            kuruyorum.
           </p>
 
-          <div class="hero-actions hero-reveal hero-reveal-delay-4">
-            <a class="button primary" href="#uzmanlik">Uzmanlıklarım</a>
-            <a class="button secondary" href="#referanslar">Referans Projeler</a>
+          <div class="hero-actions reveal intro-delay-4">
+            <a class="button primary" href="#work">Seçili İşler</a>
+            <a class="button secondary" href="#skills">Nasıl Çalışırım</a>
             <a
               class="button whatsapp"
               href="https://wa.me/905387249358?text=Merhaba%20Sezer%2C%20siteniz%20%C3%BCzerinden%20ula%C5%9F%C4%B1yorum."
@@ -68,447 +85,290 @@
               rel="noreferrer"
             >WhatsApp</a>
           </div>
+
+          <div class="hero-stats reveal intro-delay-5">
+            <div class="stat-card">
+              <strong>Uçtan uca</strong>
+              <span>Operasyon ve entegrasyon</span>
+            </div>
+            <div class="stat-card">
+              <strong>Satış odaklı</strong>
+              <span>İçerik ve vitrin düzeni</span>
+            </div>
+            <div class="stat-card">
+              <strong>Hızlı uyum</strong>
+              <span>Destek ve problem çözümü</span>
+            </div>
+          </div>
         </div>
 
-        <aside class="hero-card hero-reveal hero-reveal-delay-5">
+        <aside class="hero-card reveal intro-delay-5">
           <div class="profile-photo-wrap">
-            <img class="profile-photo" src="/profile-photo.png" alt="Sezer profil fotoğrafı">
+            <img class="profile-photo" src="profile-photo.jpg" alt="Sezer profil fotoğrafı" width="280" height="280" loading="eager" decoding="async">
           </div>
           <p class="profile-role">E-Ticaret Operasyon Uzmanı</p>
-          <h2>Uçtan uca e-ticaret operasyon yönetimi</h2>
-          <p>
-            Nebim, Entegra ve Ticimax akışlarını yönetirken ürün, stok, sipariş,
-            içerik ve görsel süreçlerini tek çatı altında ilerletebiliyorum.
+          <h2>Teknik tarafı ve operasyon tarafını aynı masada yönetirim.</h2>
+          <p class="card-copy">
+            Ürün girişinden yayına almaya, görsel düzeninden SEO uyumlu içeriğe
+            kadar süreçleri tek bir akışta toplarım.
           </p>
 
-          <div class="metric-list">
-            <div>
-              <strong>Uzman</strong>
-              <span>Entegrasyon yönetimi</span>
-            </div>
-            <div>
-              <strong>Güçlü</strong>
-              <span>Operasyon takibi</span>
-            </div>
-            <div>
-              <strong>Hızlı</strong>
-              <span>Çözüm ve adaptasyon</span>
-            </div>
-          </div>
+          <ul class="focus-list">
+            <li>Nebim, Entegra, Ticimax, ProjeSoft</li>
+            <li>Ürün içerikleri ve kategori düzeni</li>
+            <li>Görsel hazırlık ve satışa sunum</li>
+            <li>Vercel, Wix ve AI araçlarıyla kurulum</li>
+          </ul>
         </aside>
       </div>
     </header>
 
     <main>
-      <section class="section intro-strip" id="deneyim">
+      <section class="section about-section reveal-on-scroll" id="about">
         <div class="section-heading">
-          <p class="section-label">Profil</p>
-          <h2>Kısa özgeçmiş</h2>
-        </div>
-        <p class="section-text">
-          E-ticaret operasyonunda ürün girişleri, entegrasyon akışları, içerik
-          yönetimi, görsel hazırlığı, kampanyalar ve satışa açılma süreçlerini
-          birlikte yürütebiliyorum. Teknik taraf ile operasyon tarafını aynı
-          anda yönetebilmem projelerde hızlı ve uygulanabilir sonuçlar üretiyor.
-          Altyapı tarafında Entegra, Ticimax, Nebim V3 ve ProjeSoft; web tarafında
-          ise Wix tabanlı kurulumlar ve Vercel üzerinden deploy süreçlerinde de
-          aktif çalışabiliyorum.
-        </p>
-      </section>
-
-      <section class="section" id="uzmanlik">
-        <div class="section-heading">
-          <p class="section-label">Yetkinlikler</p>
-          <h2>Uzmanlık alanlarım</h2>
+          <p class="section-label">Hakkımda</p>
+          <h2>Kısa profil</h2>
         </div>
 
-        <div class="skills-grid">
-          <article class="skill-card accent-one">
-            <h3>E-ticaret ve Entegrasyon</h3>
+        <div class="about-grid">
+          <div class="about-copy">
             <p>
-              Ürünün girişinden satışa açılmasına kadar Nebim, Entegra ve
-              Ticimax entegrasyonlarını yönetiyor; sipariş, stok ve ürün
-              akışlarında operasyonel sorunlara çözüm üretiyorum.
+              E-ticaret tarafında yalnızca teknik kurulum değil, satışa çıkan
+              son deneyimi de yönetiyorum. Ürün akışı, stok, görsel, kategori,
+              kampanya ve içerik tarafı birbirinden kopuk ilerlediğinde hız
+              kaybı oluşuyor. Ben bu parçaları tek bir akışa bağlıyorum.
             </p>
-          </article>
-
-          <article class="skill-card accent-two">
-            <h3>SEO ve İçerik Yönetimi</h3>
             <p>
-              SEO uyumlu ürün açıklamaları, kategori yapıları ve görünürlük
-              artıran içerik düzenlemeleri hazırlıyor, yapay zekalı SEO
-              çalışmalarıyla satış odaklı içerik süreçleri yürütüyorum.
+              Çalıştığım yapıların ortak hedefi aynı: daha düzenli operasyon,
+              daha temiz vitrin ve daha hızlı yayına alma. SEO ve içerik
+              tarafında da satışa yaklaşan metinler hazırlıyorum.
             </p>
-          </article>
+          </div>
 
-          <article class="skill-card accent-three">
-            <h3>Ürün Fotoğrafı ve AI Mankenleme</h3>
-            <p>
-              Ürün çekimi, ürün görsellerinin düzenlenmesi ve yapay zeka
-              destekli mankenleme ile satışa hazır görsel üretim süreçlerini
-              doğrudan yönetiyorum.
-            </p>
-          </article>
-
-          <article class="skill-card accent-four">
-            <h3>ERP, POS ve Teknik Destek</h3>
-            <p>
-              Nebim V3 ERP, POS kurulumu, hata çözümü ve günlük teknik destek
-              ihtiyaçlarında operasyonu kesintiye uğratmadan çözüm üretiyorum.
-            </p>
-          </article>
+          <div class="about-highlights">
+            <article class="mini-card">
+              <span>Odak</span>
+              <strong>Operasyon + entegrasyon</strong>
+            </article>
+            <article class="mini-card">
+              <span>Katkı</span>
+              <strong>İçerik, görsel ve satış hazırlığı</strong>
+            </article>
+            <article class="mini-card">
+              <span>Çalışma şekli</span>
+              <strong>Hızlı, sade ve uygulanabilir</strong>
+            </article>
+          </div>
         </div>
       </section>
 
-      <section class="section timeline-section">
+      <section class="section projects-section reveal-on-scroll" id="work">
         <div class="section-heading">
-          <p class="section-label">Detay</p>
-          <h2>Operasyon akışındaki güçlü yönler</h2>
-        </div>
-
-        <div class="timeline">
-          <article>
-            <span class="timeline-index">01</span>
-            <div>
-              <h3>Uçtan uca entegrasyon yönetimi</h3>
-              <p>
-                Nebim, Entegra ve Ticimax yapılarında ürün, stok, sipariş ve
-                satış akışlarını yöneterek operasyonun kesintisiz ilerlemesini
-                sağlayan uygulamalı deneyim.
-              </p>
-            </div>
-          </article>
-          <article>
-            <span class="timeline-index">02</span>
-            <div>
-              <h3>Satışa açılma sürecinin tam yönetimi</h3>
-              <p>
-                Ürün girişleri, kategori düzeni, kampanya hazırlıkları,
-                açıklamalar ve satışa açılma sürecinin tüm adımlarında aktif
-                sorumluluk.
-              </p>
-            </div>
-          </article>
-          <article>
-            <span class="timeline-index">03</span>
-            <div>
-              <h3>Görsel ve operasyon kontrolü</h3>
-              <p>
-                Ürün görsellerinden içerik düzenine, günlük iş akışlarından
-                Python scriptleri ile operasyonu hızlandırmaya kadar geniş bir
-                kontrol alanında çalışıyorum.
-              </p>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section class="section stack-section">
-        <div class="section-heading">
-          <p class="section-label">Araçlar</p>
-          <h2>Kullandığım alanlar</h2>
-        </div>
-
-        <div class="tag-cloud">
-          <span>Entegra</span>
-          <span>Ticimax</span>
-          <span>SEO</span>
-          <span>Nebim V3</span>
-          <span>ProjeSoft</span>
-          <span>POS Kurulumu</span>
-          <span>Teknik Destek</span>
-          <span>Office</span>
-          <span>Yapay Zeka Araçları</span>
-          <span>Wix</span>
-          <span>Codex</span>
-          <span>Cursor</span>
-          <span>Claude</span>
-          <span>Vercel Deploy</span>
-          <span>Ürün Fotoğrafı</span>
-          <span>Müşteri Desteği</span>
-          <span>Kampanya Yönetimi</span>
-          <span>Python Scripts</span>
-        </div>
-      </section>
-
-      <section class="section services-section" id="hizmetler">
-        <div class="section-heading">
-          <p class="section-label">Hizmetler</p>
-          <h2>Doğrudan sunduğum çalışma alanları</h2>
-        </div>
-
-        <div class="services-grid">
-          <article class="service-card">
-            <h3>E-ticaret operasyon yönetimi</h3>
-            <p>Ürün girişinden satışa açılmasına kadar operasyonun tüm adımlarını yönetiyorum.</p>
-          </article>
-
-          <article class="service-card">
-            <h3>Entegrasyon ve altyapı yönetimi</h3>
-            <p>Nebim V3, Entegra, Ticimax ve ProjeSoft akışlarını kuruyor ve takip ediyorum.</p>
-          </article>
-
-          <article class="service-card">
-            <h3>Yapay zekalı SEO ve içerik</h3>
-            <p>Satış odaklı ürün açıklamaları, kategori içerikleri ve SEO süreçleri hazırlıyorum.</p>
-          </article>
-
-          <article class="service-card">
-            <h3>Görsel üretim ve düzenleme</h3>
-            <p>Ürün çekimi, görsel düzenleme ve AI mankenleme ile satışa hazır içerikler oluşturuyorum.</p>
-          </article>
-
-          <article class="service-card">
-            <h3>Teknik destek ve POS süreçleri</h3>
-            <p>POS kurulumu, hata çözümü ve günlük teknik destek ihtiyaçlarında hızlı çözüm üretiyorum.</p>
-          </article>
-
-          <article class="service-card">
-            <h3>Web kurulum ve deploy</h3>
-            <p>Wix tabanlı kurulumlar ve Vercel üzerinden web projelerini yayına alabiliyorum.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section reasons-section">
-        <div class="section-heading">
-          <p class="section-label">Neden Ben?</p>
-          <h2>Beni öne çıkaran çalışma yaklaşımı</h2>
-        </div>
-
-        <div class="reasons-grid">
-          <article class="reason-card">
-            <h3>Teknik ve operasyon birlikte</h3>
-            <p>Entegrasyon, içerik, görsel ve satışa açılma süreçlerini tek parça halinde yönetiyorum.</p>
-          </article>
-
-          <article class="reason-card">
-            <h3>Hızlı problem çözümü</h3>
-            <p>Operasyonda zaman kaybettiren sorunları hızlı tespit edip uygulanabilir çözüme çeviriyorum.</p>
-          </article>
-
-          <article class="reason-card">
-            <h3>Satış odaklı bakış</h3>
-            <p>Sadece teknik kurulum değil, satışa dönüşecek içerik ve vitrin düzeni de oluşturuyorum.</p>
-          </article>
-
-          <article class="reason-card">
-            <h3>Yayına alma disiplini</h3>
-            <p>Hazırlanan işin sadece kurulumu değil, düzgün şekilde yayına çıkması ve takip edilmesiyle ilgileniyorum.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section workflow-section">
-        <div class="section-heading">
-          <p class="section-label">Çalışma Modeli</p>
-          <h2>Projelerde nasıl ilerliyorum</h2>
-        </div>
-
-        <div class="workflow-grid">
-          <article class="workflow-card">
-            <span class="workflow-step">01</span>
-            <h3>İhtiyaç ve mevcut yapı analizi</h3>
-            <p>Markanın kullandığı altyapıyı, ürün yapısını ve operasyon akışını hızlıca analiz ediyorum.</p>
-          </article>
-
-          <article class="workflow-card">
-            <span class="workflow-step">02</span>
-            <h3>Kurulum ve düzenleme</h3>
-            <p>Entegrasyon, içerik, görsel, kategori ve satışa hazırlık alanlarını gerekli düzene getiriyorum.</p>
-          </article>
-
-          <article class="workflow-card">
-            <span class="workflow-step">03</span>
-            <h3>Kontrol ve yayına alma</h3>
-            <p>Süreçlerin sorunsuz aktığını kontrol edip ürünleri veya web yapısını yayına hazır hale getiriyorum.</p>
-          </article>
-
-          <article class="workflow-card">
-            <span class="workflow-step">04</span>
-            <h3>İyileştirme ve destek</h3>
-            <p>Yapay zekalı SEO, operasyon takibi ve teknik destek ile sürecin devamında da katkı sağlıyorum.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section platforms-section" id="platformlar">
-        <div class="section-heading">
-          <p class="section-label">Platformlar</p>
-          <h2>Hakim olduğum altyapılar ve araçlar</h2>
-        </div>
-
-        <div class="platforms-grid">
-          <a class="platform-card" href="https://www.entegrabilisim.com/" target="_blank" rel="noreferrer">
-            <span class="platform-name">Entegra</span>
-            <p>E-ticaret entegrasyonu ve tek panel operasyon yönetimi.</p>
-          </a>
-
-          <a class="platform-card" href="https://www.ticimax.com/" target="_blank" rel="noreferrer">
-            <span class="platform-name">Ticimax</span>
-            <p>E-ticaret altyapısı, ürün yönetimi ve satış operasyonu.</p>
-          </a>
-
-          <a class="platform-card" href="https://www.nebim.com.tr/tr/nebim-v3" target="_blank" rel="noreferrer">
-            <span class="platform-name">Nebim V3</span>
-            <p>ERP ve operasyon akışlarının satış kanallarıyla yönetimi.</p>
-          </a>
-
-          <a class="platform-card" href="https://www.projesoft.com.tr/" target="_blank" rel="noreferrer">
-            <span class="platform-name">ProjeSoft</span>
-            <p>E-ticaret altyapısı, entegrasyon ve satış kanal yönetimi.</p>
-          </a>
-
-          <a class="platform-card" href="https://www.wix.com/" target="_blank" rel="noreferrer">
-            <span class="platform-name">Wix</span>
-            <p>Kurumsal ve hızlı kurulum odaklı web sitesi oluşturma süreçleri.</p>
-          </a>
-
-          <a class="platform-card" href="https://openai.com/codex/" target="_blank" rel="noreferrer">
-            <span class="platform-name">Codex</span>
-            <p>AI destekli üretim, geliştirme ve iş akışı hızlandırma araçları.</p>
-          </a>
-
-          <a class="platform-card" href="https://www.cursor.com/" target="_blank" rel="noreferrer">
-            <span class="platform-name">Cursor</span>
-            <p>AI destekli geliştirme süreçlerinde verimli kod üretimi.</p>
-          </a>
-
-          <a class="platform-card" href="https://claude.ai/" target="_blank" rel="noreferrer">
-            <span class="platform-name">Claude</span>
-            <p>Yapay zeka destekli içerik, planlama ve üretim desteği.</p>
-          </a>
-
-          <a class="platform-card" href="https://vercel.com/" target="_blank" rel="noreferrer">
-            <span class="platform-name">Vercel</span>
-            <p>Hazırlanan web sitelerini hızlı şekilde deploy etme ve yayına alma.</p>
-          </a>
-        </div>
-      </section>
-
-      <section class="section projects-section" id="referanslar">
-        <div class="section-heading">
-          <p class="section-label">Referanslar</p>
-          <h2>Referans proje ve katkı başlıkları</h2>
+          <p class="section-label">Seçili İşler</p>
+          <h2>Vaka çalışması formatında referanslar</h2>
         </div>
 
         <div class="projects-grid">
-          <a class="project-card clickable-card tilt-card" href="https://www.maceracumhuriyeti.com/" target="_blank" rel="noreferrer">
+          <article class="project-card tilt-card">
             <img
               class="project-image"
-              src="https://static.ticimax.cloud/70902/uploads/sayfatasarim/sayfa28/yeni-sezon-1-43f5.jpg"
+              src="macera-home.jpg"
               alt="Macera Cumhuriyeti web sitesi görseli"
+              width="980"
+              height="704"
+              loading="lazy"
+              fetchpriority="low"
+              decoding="async"
             >
             <div class="project-content">
               <p class="project-type">Macera Cumhuriyeti</p>
-              <h3>Ürün girişinden satışa açılmasına kadar tam süreç yönetimi</h3>
-              <p>
-                Nebim, Entegra ve Ticimax tarafındaki akışların yönetimi, ürün
-                girişleri, görseller, içerikler ve satışa açılma sürecinin uçtan
-                uca takibi.
+              <h3>Ürün akışını yayına hazır hale getiren operasyon yönetimi</h3>
+              <p class="project-summary">
+                Nebim, Entegra ve Ticimax tarafındaki ürün akışlarını, içerik ve
+                görsel hazırlığını tek süreç altında topladım.
               </p>
-              <ul class="project-points">
-                <li>Entegrasyon akışlarının günlük kontrolü</li>
-                <li>Ürün içerikleri ve görsellerin hazırlanması</li>
-                <li>Satışa açılma sürecinin uçtan uca takibi</li>
-              </ul>
-              <span class="project-link">Siteyi ziyaret et</span>
+              <div class="project-insight">
+                <strong>Ne yaptım</strong>
+                <span>Ürün girişi, kategori düzeni, görsel hazırlık ve satışa açılma kontrolü</span>
+              </div>
+              <div class="project-insight">
+                <strong>Değer</strong>
+                <span>Daha az hata, daha hızlı yayın ve daha temiz vitrin akışı</span>
+              </div>
+              <div class="project-tags">
+                <span>Nebim</span>
+                <span>Entegra</span>
+                <span>Ticimax</span>
+              </div>
             </div>
-          </a>
+          </article>
 
-          <a class="project-card clickable-card tilt-card" href="https://www.adrenalinoutdoor.com/" target="_blank" rel="noreferrer">
+          <article class="project-card tilt-card">
             <img
               class="project-image"
-              src="https://static.ticimax.cloud/64197/uploads/sayfatasarim/sayfa2/adrenalinoutdoor-ff9b.jpg"
+              src="adrenalin-home.jpg"
               alt="Adrenalin Outdoor web sitesi görseli"
+              width="980"
+              height="704"
+              loading="lazy"
+              fetchpriority="low"
+              decoding="async"
             >
             <div class="project-content">
               <p class="project-type">Adrenalin Outdoor</p>
-              <h3>Entegrasyon, içerik ve görsel operasyon yönetimi</h3>
-              <p>
-                Ürünlerin sisteme alınması, entegrasyon akışlarının takibi,
-                görsel düzeni ve satışa hazır e-ticaret vitrininin oluşturulması.
+              <h3>Entegrasyon, içerik ve görsel tarafını bir arada yönetme</h3>
+              <p class="project-summary">
+                Ürünlerin sisteme alınması, kategori kurgusu ve vitrin yapısını
+                satış odaklı bir düzende ele aldım.
               </p>
-              <ul class="project-points">
-                <li>Ürünlerin sisteme alınması ve düzenlenmesi</li>
-                <li>Kategori ve içerik kurgusunun hazırlanması</li>
-                <li>Görsel düzeni ve vitrin yapısının oluşturulması</li>
-              </ul>
-              <span class="project-link">Siteyi ziyaret et</span>
+              <div class="project-insight">
+                <strong>Ne yaptım</strong>
+                <span>Ürün kartları, açıklamalar, görsel düzeni ve operasyon takibi</span>
+              </div>
+              <div class="project-insight">
+                <strong>Değer</strong>
+                <span>Daha anlaşılır ürün sunumu ve daha düzenli yayın süreci</span>
+              </div>
+              <div class="project-tags">
+                <span>Operasyon</span>
+                <span>İçerik</span>
+                <span>Görsel</span>
+              </div>
             </div>
-          </a>
+          </article>
 
-          <a class="project-card clickable-card tilt-card" href="https://www.lakenturkiye.com/" target="_blank" rel="noreferrer">
+          <article class="project-card tilt-card">
             <img
               class="project-image"
-              src="https://static.wixstatic.com/media/eab322_cd79604c696c4e77b24c1b493836cc1d~mv2.jpg/v1/fill/w_980%2Ch_704%2Cal_c%2Cq_85%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/eab322_cd79604c696c4e77b24c1b493836cc1d~mv2.jpg"
+              src="laken-home.jpg"
               alt="Laken Türkiye web sitesi görseli"
+              width="980"
+              height="704"
+              loading="lazy"
+              fetchpriority="low"
+              decoding="async"
             >
             <div class="project-content">
               <p class="project-type">Laken Türkiye</p>
-              <h3>Dijital vitrin, ürün ve içerik süreçlerine katkı</h3>
-              <p>
-                Ürün görünürlüğünü artıran, içerik ve görsel tarafı güçlendiren,
-                satışa hazırlık sürecini destekleyen dijital vitrin yaklaşımı.
+              <h3>Dijital vitrin, içerik ve ürün düzeninde operasyon desteği</h3>
+              <p class="project-summary">
+                Görünürlük, vitrin düzeni ve ürün akışı tarafında satış odaklı
+                bir yapı kurmaya katkı sağladım.
               </p>
-              <ul class="project-points">
-                <li>Ürün görünürlüğünü artıran içerik düzeni</li>
-                <li>Görsel ve vitrin yapısının güçlendirilmesi</li>
-                <li>Satışa hazırlık sürecine operasyonel katkı</li>
-              </ul>
-              <span class="project-link">Siteyi ziyaret et</span>
+              <div class="project-insight">
+                <strong>Ne yaptım</strong>
+                <span>Vitrin yapısı, ürün görünürlüğü ve operasyonel düzenleme</span>
+              </div>
+              <div class="project-insight">
+                <strong>Değer</strong>
+                <span>Daha güçlü sunum ve daha kontrollü yayın akışı</span>
+              </div>
+              <div class="project-tags">
+                <span>Wix</span>
+                <span>SEO</span>
+                <span>Vitrin</span>
+              </div>
             </div>
-          </a>
+          </article>
         </div>
       </section>
 
-      <section class="section testimonials-section">
+      <section class="section skills-section reveal-on-scroll" id="skills">
         <div class="section-heading">
-          <p class="section-label">Referanslar ve İş Notları</p>
-          <h2>Projelerde üstlendiğim sorumluluklar</h2>
+          <p class="section-label">Yetkinlikler</p>
+          <h2>Hangi alanlarda güçlü olduğum</h2>
         </div>
 
-        <div class="testimonials-grid">
-          <article class="testimonial-card">
-            <h3>Maceracı Cumhuriyeti</h3>
-            <p class="testimonial-text">
-              Ürünlerin sisteme girişinden satışa açılmasına kadar olan süreçte
-              entegrasyon yönetimi, kategori düzeni, içerik akışı ve görsel
-              hazırlık süreçlerini birlikte yönettim.
-            </p>
-            <span class="testimonial-meta">Nebim, Entegra, içerik ve operasyon akışı</span>
-          </article>
+        <div class="skills-layout">
+          <div class="skills-bento">
+            <article class="skill-card accent-one">
+              <h3>E-ticaret ve entegrasyon</h3>
+              <p>Ürün, stok ve sipariş akışlarını yönetir; sistemler arasındaki kopukluğu azaltırım.</p>
+            </article>
+            <article class="skill-card accent-two">
+              <h3>SEO ve içerik</h3>
+              <p>Satışa yaklaşan, okunaklı ve görünürlüğü artıran ürün açıklamaları hazırlarım.</p>
+            </article>
+            <article class="skill-card accent-three">
+              <h3>Görsel operasyon</h3>
+              <p>Ürün fotoğrafı, görsel düzen ve AI destekli üretim tarafını toparlarım.</p>
+            </article>
+            <article class="skill-card accent-four">
+              <h3>Teknik destek</h3>
+              <p>POS, ERP ve günlük teknik sorunlarda operasyonu durdurmadan çözüm üretirim.</p>
+            </article>
+          </div>
 
-          <article class="testimonial-card">
-            <h3>Adrenalin Outdoor</h3>
-            <p class="testimonial-text">
-              Ürün kartlarının hazırlanması, açıklamaların düzenlenmesi, görsel
-              sürecinin takip edilmesi ve satışa hazır hale gelmesi için operasyonu
-              uçtan uca planladım.
-            </p>
-            <span class="testimonial-meta">İçerik, görsel süreçleri ve satış hazırlığı</span>
-          </article>
+          <div class="skills-side">
+            <div class="section-heading compact">
+              <p class="section-label">Araçlar</p>
+              <h3>Kullandığım ekosistem</h3>
+            </div>
+            <div class="tag-cloud">
+              <span>Entegra</span>
+              <span>Ticimax</span>
+              <span>Nebim V3</span>
+              <span>ProjeSoft</span>
+              <span>Wix</span>
+              <span>Vercel</span>
+              <span>Codex</span>
+              <span>Cursor</span>
+              <span>Claude</span>
+              <span>SEO</span>
+              <span>Python</span>
+              <span>AI araçları</span>
+            </div>
 
-          <article class="testimonial-card">
-            <h3>Laken Türkiye</h3>
-            <p class="testimonial-text">
-              Entegrasyonların düzenli çalışması, ürün akışının kontrol edilmesi,
-              içerik düzeni ve vitrin tarafının satış odaklı ilerlemesi için süreci
-              operasyonel ve teknik olarak yönettim.
-            </p>
-            <span class="testimonial-meta">Entegrasyon kontrolü, vitrin düzeni ve ürün akışı</span>
+            <div class="tool-note">
+              <strong>Yaklaşım</strong>
+              <p>
+                Az bölüm, net mesaj, güçlü örnekler. Ziyaretçi ne yaptığını,
+                hangi araçları kullandığını ve neden güvenebileceğini hızlıca
+                anlamalı.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section process-section reveal-on-scroll" id="process">
+        <div class="section-heading">
+          <p class="section-label">Süreç</p>
+          <h2>Projelerde nasıl ilerlerim</h2>
+        </div>
+
+        <div class="process-grid">
+          <article class="process-card">
+            <span>01</span>
+            <h3>Analiz</h3>
+            <p>Mevcut yapı, ürün sayısı, entegrasyon akışı ve eksikleri hızlıca çıkarırım.</p>
+          </article>
+          <article class="process-card">
+            <span>02</span>
+            <h3>Kurulum</h3>
+            <p>İçerik, görsel, kategori ve teknik akışları birlikte düzene sokarım.</p>
+          </article>
+          <article class="process-card">
+            <span>03</span>
+            <h3>Yayına alma</h3>
+            <p>Son kontrolleri yapar, hataları temizler ve yayını güvenli hale getiririm.</p>
+          </article>
+          <article class="process-card">
+            <span>04</span>
+            <h3>İyileştirme</h3>
+            <p>SEO, içerik ve operasyon takibiyle süreci yayın sonrasında da desteklerim.</p>
           </article>
         </div>
       </section>
 
-      <section class="section contact-section" id="iletisim">
+      <section class="section contact-section reveal-on-scroll" id="contact">
         <div class="contact-panel">
-          <div>
+          <div class="contact-copy">
             <p class="section-label">İletişim</p>
             <h2>Birlikte çalışmak için ulaşabilirsiniz</h2>
             <p>
-              E-ticaret operasyonu, entegrasyon yönetimi, içerik, görsel ve SEO
-              süreçleri için doğrudan benimle iletişime geçebilirsiniz.
+              E-ticaret operasyonu, entegrasyon, içerik ve görsel süreçleri için
+              doğrudan iletişime geçebilirsiniz.
             </p>
             <div class="contact-actions">
               <a class="button whatsapp" href="https://wa.me/905387249358?text=Merhaba%20Sezer%2C%20siteniz%20%C3%BCzerinden%20ula%C5%9F%C4%B1yorum." target="_blank" rel="noreferrer">WhatsApp ile Yaz</a>
@@ -523,13 +383,14 @@
             <strong><a href="tel:+905387249358">+90 538 724 93 58</a></strong>
             <p>E-posta</p>
             <strong><a href="mailto:sezeracipinars@gmail.com">sezeracipinars@gmail.com</a></strong>
-            <p>Uzmanlık</p>
-            <strong>E-ticaret Operasyonu, Entegrasyon, SEO, Görsel Yönetimi</strong>
+            <p>Odak</p>
+            <strong>E-ticaret operasyonu, entegrasyon ve SEO</strong>
           </div>
         </div>
       </section>
     </main>
   </div>
+
   <a
     class="floating-whatsapp"
     href="https://wa.me/905387249358?text=Merhaba%20Sezer%2C%20siteniz%20%C3%BCzerinden%20ula%C5%9F%C4%B1yorum."
@@ -540,6 +401,7 @@
     <span class="floating-whatsapp__icon">W</span>
     <span class="floating-whatsapp__text">WhatsApp</span>
   </a>
+
   <script src="script.js"></script>
 </body>
 </html>

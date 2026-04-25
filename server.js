@@ -5,7 +5,11 @@ const path = require("path");
 const root = __dirname;
 const host = "127.0.0.1";
 const port = 3000;
-const profileImage = "C:\\Users\\PC\\Desktop\\Ekran görüntüsü 2026-04-24 231629.png";
+const profileImages = {
+  ".png": path.join(root, "profile-photo.png"),
+  ".jpg": path.join(root, "profile-photo.jpg"),
+  ".jpeg": path.join(root, "profile-photo.jpg"),
+};
 
 const mimeTypes = {
   ".html": "text/html; charset=utf-8",
@@ -21,15 +25,19 @@ const mimeTypes = {
 
 http.createServer((req, res) => {
   const safePath = decodeURIComponent((req.url || "/").split("?")[0]);
-  if (safePath === "/profile-photo.png") {
-    fs.readFile(profileImage, (error, data) => {
+
+  if (safePath === "/profile-photo.png" || safePath === "/profile-photo.jpg" || safePath === "/profile-photo.jpeg") {
+    const ext = path.extname(safePath).toLowerCase();
+    const imagePath = profileImages[ext] || profileImages[".jpg"];
+
+    fs.readFile(imagePath, (error, data) => {
       if (error) {
         res.writeHead(404, { "Content-Type": "text/plain; charset=utf-8" });
         res.end("Not found");
         return;
       }
 
-      res.writeHead(200, { "Content-Type": "image/png" });
+      res.writeHead(200, { "Content-Type": ext === ".png" ? "image/png" : "image/jpeg" });
       res.end(data);
     });
     return;
